@@ -10,18 +10,32 @@ int main() {
     char nombre[50];  // 50 espacios para escribir el nombre
 
     printf("Sistema de ventas de un producto\n");
-
-    printf("Ingrese el ID del producto: ");
-    scanf("%d", &id);
+    do {
+        printf("Ingrese el ID del producto: ");
+        scanf("%d", &id);
+        if (id <= 0) {
+            printf("ID inválido. Debe ser mayor a 0.\n");
+        }
+    } while (id <= 0);
 
     printf("Ingrese el nombre del producto: ");
     scanf(" %[^\n]", nombre);   // para q acepte un espacio (Ej. leche de soya)
 
-    printf("Ingrese la cantidad en stock: ");
-    scanf("%d", &stock);
+    do {
+        printf("Ingrese la cantidad en stock: ");
+        scanf("%d", &stock);
+        if (stock < 0) {
+            printf("Cantidad inválida. No puede ser negativa.\n");
+        }
+    } while (stock < 0);
 
-    printf("Ingrese el precio unitario: ");
-    scanf("%f", &precio);
+    do {
+        printf("Ingrese el precio unitario: ");
+        scanf("%f", &precio);
+        if (precio <= 0) {
+            printf("Precio inválido. Debe ser mayor a 0.\n");
+        }
+    } while (precio <= 0);
 
     do {
         printf("\nMENU\n");
